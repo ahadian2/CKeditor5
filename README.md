@@ -212,4 +212,4 @@ return Json(new { uploaded = false, error = "تصویری برای آپلود ا
 </ul>
 البته برای رفع این مشکل CKeditor راه کار هایی مثل CKbox و CKfinder را ایجاد کرده اما متاسفانه رایگان نمیباشند. و برای رفع این مشکل در قسمت بعدی این آموزش یک مدیریت فایل را ایجاد و به ادیتور خود اضافه میکنیم.
 <h2>ویدیو آموزش آپلود تصویر در CKeditor 5</h2>
-    <script type="text/JavaScript" src="https://www.aparat.com/embed/zmfD7?data[rnddiv]=85641651399&data[responsive]=yes"></script>
+<amp-iframe width="640" height="360" sandbox="allow-scripts allow-same-origin" layout="responsive" frameborder="0" src="https://www.aparat.com/video/video/embed/videohash/zmfD7/vt/frame?isamp"></amp-iframe>
