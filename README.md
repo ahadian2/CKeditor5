@@ -212,4 +212,7 @@ return Json(new { uploaded = false, error = "تصویری برای آپلود ا
 </ul>
 البته برای رفع این مشکل CKeditor راه کار هایی مثل CKbox و CKfinder را ایجاد کرده اما متاسفانه رایگان نمیباشند. و برای رفع این مشکل در قسمت بعدی این آموزش یک مدیریت فایل را ایجاد و به ادیتور خود اضافه میکنیم.
 <h2>ویدیو آموزش آپلود تصویر در CKeditor 5</h2>
-<amp-iframe width="640" height="360" sandbox="allow-scripts allow-same-origin" layout="responsive" frameborder="0" src="https://www.aparat.com/video/video/embed/videohash/zmfD7/vt/frame?isamp"></amp-iframe>
+<a href="https://hajifirouz35.cdn.asset.aparat.com/aparat-video/0617f46a5e1854bead482e8dda4e9c8b54971846-1080p.mp4?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6Ijk3ZGYwZGY1YzBjNzU1ZDY2MmRjNTU4NTJiODllOWI1IiwiZXhwIjoxNjk1ODU5NzU5LCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.o73dggs_aw-zGwsO0Turmh3VbxO1NEBiHR0nWe-u2ww">لینک دانلود</a>
+<video width="100%" height="auto" controls>
+  <source src="https://hajifirouz35.cdn.asset.aparat.com/aparat-video/0617f46a5e1854bead482e8dda4e9c8b54971846-1080p.mp4?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6Ijk3ZGYwZGY1YzBjNzU1ZDY2MmRjNTU4NTJiODllOWI1IiwiZXhwIjoxNjk1ODU5NzU5LCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.o73dggs_aw-zGwsO0Turmh3VbxO1NEBiHR0nWe-u2ww" type="video/mp4">
+</video>
