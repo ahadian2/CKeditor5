@@ -1,0 +1,44 @@
+@import '../Variable.scss';
+
+.MvcView-Details-Delete {
+    margin: 0 10px;
+
+    .header-dd {
+        background: $Background-1;
+        color: $ColorText-2;
+        padding: 10px 15px 12px;
+        font-weight: 600;
+        font-size: 14px;
+        border-radius: $radius_4 $radius_4 0 0;
+    }
+
+    .body-dd {
+        background: $Background-4;
+        color: $ColorText-1;
+        padding: 15px 15px 12px;
+        font-weight: 400;
+        font-size: 13px;
+        margin-bottom: 15px;
+
+        a {
+            color: $ColorText-1;
+            font-weight: 400;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: auto auto;
+        }
+    }
+}
+.MvcView-Delete-title {
+    background: $Background-5;
+    color: #f1f2f7;
+    text-align: center;
+    margin: 0 10px 15px 10px;
+    padding: 60px 10px;
+    border-radius: 4px;
+}

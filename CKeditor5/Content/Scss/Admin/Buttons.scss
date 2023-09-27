@@ -1,0 +1,224 @@
+@import 'Variable.scss';
+.btn-add {
+    text-decoration: none;
+    background: $Background-btn-green;
+    color: $ColorText-2 !important;
+    display: inline-block;
+    padding: 8px 45px 8px 10px;
+    position: relative;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: $radius_3;
+
+    &:before {
+        content: "\F64D";
+        display: inline-block;
+        font-family: "bootstrap-icons" !important;
+        font-style: normal;
+        font-weight: normal !important;
+        font-variant: normal;
+        text-transform: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 35px;
+        background: $Background-btn-green-hover;
+        text-align: center;
+        font-size: 17px;
+        line-height: 37px;
+        transition: width 0.5s;
+        border-radius: $radius_3;
+    }
+
+    &:hover::before {
+        width: 100%;
+        transition: width 0.5s;
+    }
+}
+.btn-edit {
+    text-decoration: none;
+    background: $Background-btn-green;
+    color: $ColorText-2 !important;
+    display: inline-block;
+    padding: 8px 45px 8px 10px;
+    position: relative;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: $radius_3;
+
+    &:before {
+        content: "\F4CB";
+        display: inline-block;
+        font-family: "bootstrap-icons" !important;
+        font-style: normal;
+        font-weight: normal !important;
+        font-variant: normal;
+        text-transform: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 35px;
+        background: $Background-btn-green-hover;
+        text-align: center;
+        font-size: 17px;
+        line-height: 37px;
+        transition: width 0.5s;
+        border-radius: $radius_3;
+    }
+
+    &:hover::before {
+        width: 100%;
+        transition: width 0.5s;
+    }
+}
+.btn-delete {
+    text-decoration: none;
+    background: $Background-btn-red;
+    color: $ColorText-2 !important;
+    display: inline-block;
+    padding: 8px 45px 8px 10px;
+    position: relative;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: $radius_3;
+
+    &:before {
+        content: "\F5DE";
+        display: inline-block;
+        font-family: "bootstrap-icons" !important;
+        font-style: normal;
+        font-weight: normal !important;
+        font-variant: normal;
+        text-transform: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 35px;
+        background: $Background-btn-red-hover;
+        text-align: center;
+        font-size: 17px;
+        line-height: 37px;
+        transition: width 0.5s;
+        border-radius: $radius_3;
+    }
+
+    &:hover::before {
+        width: 100%;
+        transition: width 0.5s;
+    }
+}
+.btn-detail {
+    text-decoration: none;
+    background: $Background-btn-blue;
+    color: $ColorText-2 !important;
+    display: inline-block;
+    padding: 8px 45px 8px 10px;
+    position: relative;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: $radius_3;
+
+    &:before {
+        content: "\F214";
+        display: inline-block;
+        font-family: "bootstrap-icons" !important;
+        font-style: normal;
+        font-weight: normal !important;
+        font-variant: normal;
+        text-transform: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 35px;
+        background: $Background-btn-blue-hover;
+        text-align: center;
+        font-size: 17px;
+        line-height: 37px;
+        transition: width 0.5s;
+        border-radius: $radius_3;
+    }
+
+    &:hover::before {
+        width: 100%;
+        transition: width 0.5s;
+    }
+}
+.btn-back {
+    text-decoration: none;
+    background: $Background-1;
+    color: $ColorText-2 !important;
+    display: inline-block;
+    padding: 8px 45px 8px 10px;
+    position: relative;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: $radius_3;
+
+    &:before {
+        content: "\F231";
+        display: inline-block;
+        font-family: "bootstrap-icons" !important;
+        font-style: normal;
+        font-weight: normal !important;
+        font-variant: normal;
+        text-transform: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 35px;
+        background: $Background-5;
+        text-align: center;
+        font-size: 17px;
+        line-height: 37px;
+        transition: width 0.5s;
+        border-radius: $radius_3;
+    }
+
+    &:hover::before {
+        width: 100%;
+        transition: width 0.5s;
+    }
+}
+.btn-save {
+    text-decoration: none;
+    background: $Background-btn-green !important;
+    color: $ColorText-2 !important;
+    display: inline-block;
+    padding: 7px 30px 8px !important;
+    position: relative;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    border-radius: $radius_3 !important;
+    border: none !important;
+    margin: 0 0 5px;
+    transition: background 0.5s;
+
+    &:hover {
+        transition: background 0.5s;
+        background: $Background-btn-green-hover !important;
+    }
+}
+.btn-delete-form {
+    text-decoration: none;
+    background: $Background-btn-red !important;
+    color: $ColorText-2 !important;
+    display: inline-block;
+    padding: 8px 30px 8px !important;
+    position: relative;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    border-radius: $radius_3 !important;
+    border: none !important;
+    margin: 0 0 5px;
+    transition: background 0.5s;
+
+    &:hover {
+        transition: background 0.5s;
+        background: $Background-btn-red-hover !important;
+    }
+}

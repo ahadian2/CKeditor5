@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TehranIt - @ViewBag.Title</title>
+    <link rel="icon" type="image/png" href="~/Images/Favicon/favicon.png" />
+    <link href="~/Content/bootstrap.rtl.min.css" rel="stylesheet" type="text/css" />
+    <link id="MyCss" href="~/Content/Admin.css" rel="stylesheet" type="text/css" />
+    <link id="MyCss" href="~/Content/AdminDark.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    @RenderSection("Style", false)
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            @*NavBar-Right*@
+            <div class="col-auto col-lg-3 col-xl-2 NavbarRight">
+                <div class="d-flex flex-column align-items-center align-items-sm-start pt-2 min-vh-100 sticky-top">
+                    <div class="Logo">
+                        <a href="/">
+                            <img src="~/Images/Logo/logo-bg-les.png" />
+                        </a>
+                        <i class="bi bi-arrows-fullscreen icon-Menu icon-Menu-right"></i>
+                    </div>
+                    <ul class="nav nav-pills flex-column align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a id="dashboard" href="#" class="nav-link">
+                                <i class="bi-speedometer2"></i>
+                                <span>داشبورد</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="Menu-Title">
+                        <span>مدیریت رسانه ها</span>
+                        <hr />
+                    </div>
+                    <ul class="nav nav-pills flex-column align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="bi bi-images"></i>
+                                <span>رسانه ها</span>
+                            </a>
+                            <ul class="nav flex-column">
+                                <li>
+                                    <a href="#" class="nav-link">
+                                        <span>کاربر میهمان</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link">
+                                        <span>کاربر ویرایشگر</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link">
+                                        <span>کاربر مدیر</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#submenu1" class="nav-link">
+                                <i class="bi bi-card-image"></i>
+                                <span>افزودن رسانه</span>
+                            </a>
+                            <ul class="nav flex-column">
+                                <li>
+                                    <a href="#" class="nav-link">
+                                        <span>کاربر میهمان</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link">
+                                        <span>کاربر ویرایشگر</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link">
+                                        <span>کاربر مدیر</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link">
+                                <i class="bi bi-gear-wide-connected"></i>
+                                <span>تنظیمات رسانه</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="Menu-Title">
+                        <span>مدیریت فایل ها</span>
+                        <hr />
+                    </div>
+                    <ul class="nav nav-pills flex-column align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="bi bi-briefcase-fill"></i>
+                                <span>فایل ها</span>
+                                <span class="number">20</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#submenu1" class="nav-link">
+                                <i class="bi bi-box-fill"></i>
+                                <span>افزودن فایل</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link">
+                                <i class="bi bi-sliders"></i>
+                                <span>تنظیمات فایل</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="Menu-Title">
+                        <span>مدیریت کاربران</span>
+                        <hr />
+                    </div>
+                    <ul class="nav nav-pills flex-column align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="bi bi-people-fill"></i>
+                                <span>کاربران</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#submenu1" class="nav-link">
+                                <i class="bi bi-person-plus-fill"></i>
+                                <span>افزودن کاربر</span>
+                            </a>
+                            <ul class="nav flex-column">
+                                <li>
+                                    <a href="#" class="nav-link">
+                                        <span>کاربر میهمان</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link">
+                                        <span>کاربر ویرایشگر</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link">
+                                        <span>کاربر مدیر</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link ">
+                                <i class="bi-table"></i>
+                                <span>سفارش ها</span>
+                            </a>
+                        </li>
+                    </ul>
+                    @*night-mode*@
+                    <div class="night-mode">
+                        <div class="form-switch">
+                            <i class="bi bi-moon-fill icon-night"></i>
+                            <span class="txt-night">حالت شب</span>
+                            <input class="form-check-input" type="checkbox" role="switch" id="night-mode-switch">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*Content*@
+            <div class="col py-0 ">
+                @*Navbar-Top*@
+                <div class="row sticky-top NavbarTop">
+                    <div class="search-navbar">
+                        <div class="search-navbar-div">
+                            <form>
+                                <input id="search" type="text" placeholder="جستجو کنید" />
+                                <input type="submit" value=" &#xF52A" />
+                            </form>
+                            <i class="bi bi-x-lg search-navbar-close"></i>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <ul>
+                            <li>
+                                <i class="bi bi-arrows-fullscreen icon-Menu"></i>
+                            </li>
+                            <li>
+                                <i class="bi bi-search search-navbar-open"></i>
+                            </li>
+                            <li>
+                                <div class="dropdown idropdown">
+                                    <i class="bi bi-bell" style="position: relative; left: 2px; top: 1px;" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                                    <span class="number">10</span>
+                                    <div class="dropdown-menu">
+                                        <a href="/">
+                                            <i class="bi bi-envelope-fill"></i>
+                                            <span>ایمیل شما هنوز احراز هویت نشده</span>
+                                        </a>
+                                        <a href="/">
+                                            <i class="bi bi-phone-fill"></i>
+                                            <span>تلفن شما هنوز احراز هویت نشده</span>
+                                        </a>
+                                        <a href="/">
+                                            <i class="bi bi-credit-card-fill"></i>
+                                            <span>شما 1 صورت حساب پرداخت نشده دارید</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col text-end">
+                        <div class="dropdown idropdown">
+                            <img src="~/Images/User/user.jpg" data-bs-toggle="dropdown" aria-expanded="false" />
+                            <div class="dropdown-menu">
+                                <a href="#">
+                                    <i class="bi bi-person-fill"></i>
+                                    <span>محمدرضا</span>
+                                    <span>احدیان</span>
+                                </a>
+                                <a href="#">
+                                    <i class="bi bi-credit-card-fill"></i>
+                                    <span>مشاهده حساب ها</span>
+                                </a>
+                                <a href="#">
+                                    <i class="bi bi-key-fill"></i>
+                                    <span>تغییر رمز عبور</span>
+                                </a>
+                                <a href="#">
+                                    <i class="bi bi-box-arrow-right"></i>
+                                    <span>خروج</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*Content*@
+                @RenderBody()
+            </div>
+        </div>
+        @*footer*@
+        <footer>
+            <div class="my-footer">
+                <a href="http://tehranit.net/">
+                    <span>طراح و برنامه نویس </span>
+                    <span class="name">محمدرضا احدیان</span>
+                </a>
+                <div class="icon">
+                    <i class="bi bi-c-circle-fill"></i>
+                </div>
+            </div>
+        </footer>
+    </div>
+    @*Loader*@
+    <div class="Loader"></div>
+    <script src="~/Scripts/jquery-3.7.0.min.js"></script>
+    <script src="~/Scripts/jquery.cookie-1.4.1.min.js"></script>
+    <script src="~/Scripts/MyJS.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    @RenderSection("Script", false)
+</body>
+</html>

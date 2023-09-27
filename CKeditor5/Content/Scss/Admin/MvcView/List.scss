@@ -1,0 +1,164 @@
+@import '../Variable.scss';
+
+.MvcView-list {
+    display: grid;
+    margin: 0 10px;
+
+    .table-responsive::-webkit-scrollbar {
+        width: 2px !important;
+        height: 5px;
+    }
+
+    .table-responsive::-webkit-scrollbar-track {
+        background: $Background-7 !important;
+    }
+
+    .table-responsive::-webkit-scrollbar-thumb {
+        background: $Background-5 !important;
+    }
+
+    .table-responsive {
+        border-radius: $radius_4 $radius_4 0 0;
+
+        table {
+            margin: 0;
+
+            thead {
+                background: $Background-1;
+                color: $ColorText-3;
+
+                tr {
+                    border-color: transparent;
+                }
+
+                th {
+                    padding: 13px 10px;
+                    font-size: 13px;
+                    font-weight: 500;
+                    vertical-align: middle;
+                    white-space: nowrap;
+
+                    i {
+                        font-size: 20px;
+                        position: relative;
+                        top: 2px;
+                        right: 5px;
+                    }
+
+                    .solotion {
+                        top: 3px;
+                        display: block;
+                        text-align: left;
+                        right: 0px;
+                    }
+                }
+            }
+
+            tbody {
+                color: $ColorText-1;
+                background: $Background-4;
+
+                tr {
+                    transition: background 0.4s;
+                    cursor: pointer;
+                    border-bottom: solid 1px $Border-Color-2;
+
+                    &:last-child {
+                        border-color: transparent;
+                    }
+
+                    &:hover {
+                        background: $Background-5;
+                        color: $ColorText-2;
+                        transition: background 0.4s;
+
+                        a {
+                            color: $ColorText-2;
+                        }
+                    }
+                }
+
+                td {
+                    padding: 10px;
+                    font-size: 13px;
+                    vertical-align: middle;
+
+                    a {
+                        font-size: 13px;
+                        text-decoration: none;
+                        color: $ColorText-1;
+                    }
+                }
+
+                img {
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 100%;
+                }
+            }
+        }
+    }
+
+    .modal {
+        text-align: right;
+
+        .modal-body {
+            padding: 20px 15px;
+            background: $Background-4;
+
+            a {
+                width: 100%;
+                margin-bottom: 5px;
+                padding: 8px 55px 8px 10px;
+
+                &:before {
+                    width: 45px;
+                }
+
+                &:hover:before {
+                    width: 100%;
+                }
+            }
+        }
+
+        .modal-header {
+            background: $Background-1;
+            border: none;
+
+            .modal-title {
+                color: $ColorText-2;
+                font-size: 14px;
+                font-weight: 400;
+                position: relative;
+                padding-right: 25px;
+
+                &:before {
+                    content: "\f214";
+                    display: inline-block;
+                    font-family: "bootstrap-icons" !important;
+                    font-style: normal;
+                    font-weight: normal !important;
+                    font-variant: normal;
+                    text-transform: none;
+                    position: absolute;
+                    right: 0;
+                    top: -3px;
+                    font-size: 17px;
+                }
+            }
+
+            .btn-close-modal {
+                color: $ColorText-3;
+                font-size: 25px;
+                left: 5px;
+                top: 12px;
+                transition: color 0.5s;
+
+                &:hover {
+                    color: $ColorText-6;
+                    transition: color 0.5s;
+                }
+            }
+        }
+    }
+}

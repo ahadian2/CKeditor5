@@ -1,0 +1,111 @@
+@import '../Variable.scss';
+
+.MvcView-Form {
+    margin: 0 10px;
+    padding: 10px;
+    background: $Background-4;
+
+    input {
+        background: $Background-4;
+        color: $ColorText-1;
+        border: solid 1px $Border-Color-4;
+        border-radius: 0;
+        padding: 13px 10px;
+        font-size: 13px;
+        font-weight: 400;
+
+        &:focus {
+            background: $Background-2;
+            color: $ColorText-1;
+            border: solid 1px $Border-Color-4;
+            box-shadow: none !important;
+        }
+    }
+
+    .checkbox {
+
+        span {
+            padding: 7px 5px 6px 4px;
+            color: $ColorText-7;
+            font-size: 13px;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+
+        input {
+            position: relative;
+            top: 5px;
+            margin-left: 15px;
+            width: 17px;
+            height: 17px;
+        }
+    }
+
+    .FileUpload {
+        display: flex;
+        align-items: center;
+
+        input {
+            border: none;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    .Select {
+        select {
+            background: $Background-4;
+            color: $ColorText-1;
+            border: solid 1px $Border-Color-4;
+            border-radius: 0;
+            padding: 13px 10px;
+            font-size: 13px;
+            font-weight: 400;
+            width: 100%
+        }
+    }
+
+    label {
+        color: $ColorText-7;
+        font-size: 13px;
+        font-weight: 400;
+        margin: 0 3px 3px 0;
+        white-space: nowrap;
+    }
+
+    .text-danger {
+        font-size: 13px;
+        font-weight: 400;
+        padding: 3px;
+        display: block;
+
+        span {
+            padding-right: 23px;
+            position: relative;
+
+            &:before {
+                content: '\F333';
+                display: inline-block;
+                font-family: "bootstrap-icons" !important;
+                font-style: normal;
+                font-weight: normal !important;
+                font-variant: normal;
+                text-transform: none;
+                position: absolute;
+                right: 2px;
+                top: -2px;
+                font-size: 16px;
+                animation: blinker 0.7s linear infinite;
+            }
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+    }
+}

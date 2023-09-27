@@ -1,0 +1,206 @@
+﻿<#@ template language="C#" HostSpecific="True" #>
+<#@ output extension=".cshtml" #>
+<#@ include file="Imports.include.t4" #>
+@model IEnumerable<#= "<" + ViewDataTypeName + ">" #>
+<#
+// The following chained if-statement outputs the file header code and markup for a partial view, a view using a layout page, or a regular view.
+if(IsPartialView) {
+#>
+
+<#
+} else if(IsLayoutPageSelected) {
+#>
+
+@{
+    ViewBag.Title = "<#= ViewName#>";
+<#
+if (!String.IsNullOrEmpty(LayoutPageFile)) {
+#>
+    Layout = "<#= LayoutPageFile#>";
+<#
+}
+#>
+}
+<#
+} else {
+#>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title><#= ViewName #></title>
+</head>
+<body>
+<#
+    PushIndent("    ");
+}
+#>
+@*header*@
+<div class="row MvcView-header">
+    <div class="col d-none d-sm-block">
+        <h2 class="MvcView-Title px-2">لیست ... جدید</h2>
+    </div>
+    <div class="col-auto text-end">
+        @Html.ActionLink("افزودن ... جدید", "Create", null, new { @class = "btn-add" })
+    </div>
+</div>
+@*main*@
+<div class="MvcView-list">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+<#
+IEnumerable<PropertyMetadata> properties = ModelMetadata.Properties;
+foreach (PropertyMetadata property in properties) {
+    if (property.Scaffold && !property.IsPrimaryKey && !property.IsForeignKey) {
+#>
+<#
+        // We do not want to show any association properties for which there is
+        // no associated foreign key.
+        if (property.IsAssociation && GetRelatedModelMetadata(property) == null) {
+            continue;
+        }
+#>
+        <th>
+            @Html.DisplayNameFor(model => model.<#= GetValueExpression(property) #>)
+        </th>
+<#
+    }
+}
+#>
+        <th>
+            <i class="bi bi-three-dots solotion"></i>
+        </th>
+    </tr>
+  </thead>
+  <tbody id="myTable">
+   @{
+       int i = 1;
+   }
+@foreach (var item in Model) {
+    <tr data-bs-toggle="modal" data-bs-target="#Modal_@i">
+<#
+foreach (PropertyMetadata property in properties) {
+    if (property.Scaffold && !property.IsPrimaryKey && !property.IsForeignKey) {
+#>
+<#
+        // We do not want to show any association properties for which there is
+        // no associated foreign key.
+        if (property.IsAssociation && GetRelatedModelMetadata(property) == null) {
+            continue;
+        }
+#>
+        <td>
+            @Html.DisplayFor(modelItem => <#= "item." + GetValueExpression(property) #>)
+        </td>
+<#
+    }
+}
+
+string pkName = GetPrimaryKeyName();
+if (pkName != null) {
+#>
+<td class="text-end">
+                            <i class="bi bi-three-dots-vertical"></i>
+                            <!-- Modal @i -->
+                            <div class="modal fade" id="Modal_@i" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h2 class="modal-title" id="exampleModalLabel">تایتل مدال</h2>
+                                            <i class="bi bi-x btn-close-modal" data-bs-dismiss="modal" aria-label="Close"></i>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div>
+                                                @Html.ActionLink("ویرایش", "Edit", new { id=item.<#= pkName #> }, new { @class = "btn-edit" })
+                                            </div>
+                                            <div>
+                                                @Html.ActionLink("جزئیات", "Details", new { id=item.<#= pkName #> }, new { @class = "btn-detail" })
+                                            </div>
+                                            <div>
+                                                @Html.ActionLink("حذف", "Delete", new { id=item.<#= pkName #> }, new { @class = "btn-delete" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+<#
+} else {
+#>
+<td class="text-end">
+                            <i class="bi bi-three-dots-vertical"></i>
+                            <!-- Modal @i -->
+                            <div class="modal fade" id="Modal_@i" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h2 class="modal-title" id="exampleModalLabel">تایتل مدال</h2>
+                                            <i class="bi bi-x btn-close-modal" data-bs-dismiss="modal" aria-label="Close"></i>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div>
+                                                @Html.ActionLink("ویرایش", "Edit", new { /* id=item.PrimaryKey */ }, new { @class = "btn-edit" })
+                                            </div>
+                                            <div>
+                                                @Html.ActionLink("جزئیات", "Details", new { /* id=item.PrimaryKey */ }, new { @class = "btn-detail" })
+                                            </div>
+                                            <div>
+                                                @Html.ActionLink("حذف", "Delete", new { /* id=item.PrimaryKey */ }, new { @class = "btn-delete" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+<#
+}
+#>
+</tr>
+i = i + 1;
+}
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Style{
+    @*My Css Code*@
+}
+@section Script{
+    <script>
+        @*for hover Right navbar slider *@
+        $(document).ready(function () {
+            $('#dashboard').addClass('active');
+            @*Search table*@
+            $("#search").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+}
+
+<#
+// The following code closes the tag used in the case of a view using a layout page and the body and html tags in the case of a regular view page
+#>
+<#
+if(!IsPartialView && !IsLayoutPageSelected) {
+    ClearIndent();
+#>
+</body>
+</html>
+<#
+}
+#>
+<#@ include file="ModelMetadataFunctions.cs.include.t4" #>

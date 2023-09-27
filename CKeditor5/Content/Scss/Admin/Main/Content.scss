@@ -1,0 +1,10 @@
+@import '../Variable.scss';
+
+.main{
+    margin:10px 0;
+    .content{
+        background:$Background-4;
+        padding:10px;
+    }
+}
+

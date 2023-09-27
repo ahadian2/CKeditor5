@@ -1,0 +1,59 @@
+﻿@model CKeditor5.Models.Post
+
+@{
+    ViewBag.Title = "Delete";
+}
+    @*header*@
+    <div class="row MvcView-header">
+        <div class="col d-none d-sm-block">
+            <h2 class="MvcView-Title px-2">حذف ....</h2>
+        </div>
+        <div class="col-auto text-end">
+            @Html.ActionLink("بازگشت به لیست", "Index", null, new { @class = "btn-back" })
+        </div>
+    </div>
+    @*main*@
+<div class="row MvcView-Delete-title">
+   <h3>آیا از حــذف اطلاعــات زیر مــطمئن هســتید ؟</h3>
+</div>
+<div class="MvcView-Details-Delete">
+
+
+            <div class="header-dd">
+                @Html.DisplayNameFor(model => model.PostTitle)
+            </div>
+            <div class="body-dd">
+               @Html.DisplayFor(model => model.PostTitle)
+            </div>
+
+
+            <div class="header-dd">
+                @Html.DisplayNameFor(model => model.PostContent)
+            </div>
+            <div class="body-dd">
+               @Html.DisplayFor(model => model.PostContent)
+            </div>
+
+
+</div>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="mt-3 text-center">
+            <input type="submit" value="بله حذف کن !" class="btn-delete-form" /> 
+        </div>
+    }
+
+    @section Style{
+    @*My Css Code*@
+}
+@section Script{
+    <script>
+        @*for hover Right navbar slider *@
+        $(document).ready(function () {
+            $('#dashboard').addClass('active');
+        });
+    </script>
+}
+

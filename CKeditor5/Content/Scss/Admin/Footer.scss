@@ -1,0 +1,69 @@
+@import 'Variable.scss';
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 20px;
+
+    .my-footer {
+        display: flex;
+        align-items: center;
+
+        .icon {
+            background: $Background-5;
+            color: $ColorText-2;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-radius 0.5s;
+            z-index: 999;
+
+            &:hover {
+                border-radius: 10%;
+                transition: border-radius 0.5s;
+            }
+
+            i {
+                font-size: 25px;
+                line-height: 47px;
+            }
+        }
+
+
+        a {
+            background: $Background-1;
+            color: $ColorText-2;
+            text-decoration: none;
+            font-size: 12px;
+            display: block;
+            font-weight: 700;
+            height: 40px;
+            padding: 0 15px;
+            margin-left: 5px;
+            line-height: 40px;
+            transform: translateX(-150%);
+            transition: transform 1s;
+            border-radius: $radius_4;
+
+            &:hover {
+                background: $Background-5;
+                color: $ColorText-2;
+            }
+        }
+    }
+}
+.footer-close {
+    .my-footer {
+        a {
+            transform: translateX(0%);
+            transition: transform 1s;
+        }
+
+        .icon {
+            border-radius: 100%;
+        }
+    }
+}
+

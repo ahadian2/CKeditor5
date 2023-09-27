@@ -1,0 +1,37 @@
+@import 'Variable.scss';
+
+.Loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $Background-1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999999;
+    transition: opacity 0.75s,visibility 0.75s;
+    &:after{
+        content:"";
+        width:75px;
+        height:75px;
+        border:solid 15px $Border-Color-1;
+        border-top-color:$Border-Color-3;
+        border-radius:50%;
+        animation:loding 0.75s ease infinite;
+    }
+}
+.Loader-Hidden{
+    opacity:0;
+    visibility:hidden;
+}
+
+@keyframes loding{
+    from{
+        transform:rotate(0turn);
+    }
+    to {
+        transform: rotate(1turn);
+    }
+}

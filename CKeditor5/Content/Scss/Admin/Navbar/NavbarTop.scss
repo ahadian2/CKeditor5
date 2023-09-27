@@ -1,0 +1,165 @@
+@import '../Variable.scss';
+
+.NavbarTop {
+    background: $Background-4;
+    padding: 10px 0;
+    align-items: center;
+
+    ul {
+        padding: 5px 0 0 0;
+        margin: 0;
+
+        li {
+            display: inline-block;
+            font-size: 18px;
+            top: 1px;
+            color: $ColorText-1;
+            cursor: pointer;
+            width: 40px;
+            text-align: center;
+            position: relative;
+
+            .number {
+                position: absolute;
+                background: $Background-5;
+                color: $ColorText-4;
+                font-weight: 900;
+                font-size: 8px;
+                width: 18px;
+                height: 18px;
+                border-radius: 100%;
+                top: -9px;
+                left: 5px;
+                line-height: 19px;
+            }
+        }
+    }
+
+    img {
+        width: 35px;
+        border-radius: 100%;
+        cursor: pointer;
+    }
+
+    .search-navbar {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 100% !important;
+        background: $Background-5;
+        color: $ColorText-2;
+        z-index: 9;
+        display: none;
+
+        .search-navbar-div {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            height: 100% !important;
+            position: relative;
+
+            form {
+                width: 100%;
+                position: relative;
+                padding: 0 40px 0 10px;
+
+                input {
+
+
+                    &[type="text"] {
+                        width: 100%;
+                        border: none;
+                        outline: none !important;
+                        background: transparent;
+                        color: $ColorText-2;
+                        font-weight: 700;
+                    }
+
+                    &[type="submit"] {
+                        display: inline-block;
+                        font-family: "bootstrap-icons" !important;
+                        background: transparent;
+                        border: none;
+                        outline: none !important;
+                        font-size: 23px;
+                        position: absolute;
+                        left: 0;
+                        color: $ColorText-2;
+                        top: -1px;
+                    }
+                }
+
+                ::-webkit-input-placeholder {
+                    color: $ColorText-2;
+                }
+
+                :-ms-input-placeholder {
+                    color: $ColorText-2;
+                }
+
+                ::placeholder {
+                    color: $ColorText-2;
+                }
+            }
+
+            i {
+                position: absolute;
+                font-size: 25px;
+                right: 5px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .idropdown {
+        .dropdown-menu {
+            background: $Background-1;
+            min-width: max-content;
+            max-width: 250px;
+            padding: 0;
+            border-radius: 0;
+            border: none;
+
+            a {
+                color: $ColorText-3;
+                text-decoration: none;
+                display: block;
+                border-bottom: solid 1px $Border-Color-1;
+                padding: 10px 15px;
+                margin-bottom: 0;
+                font-size: 12px;
+
+                &:hover {
+                    background: $Background-5;
+                    transition: background 0.5s;
+                }
+
+                &:hover span {
+                    color: $ColorText-4;
+                }
+
+                &:hover i {
+                    color: $ColorText-1;
+                }
+
+                &:last-of-type {
+                    border: none;
+                    margin-bottom: 0;
+                }
+
+                i {
+                    color: $ColorText-6;
+                    font-size: 17px;
+                    padding-left: 5px;
+                    position: relative;
+                    top: 2px;
+                }
+
+                span {
+                    color: $ColorText-3;
+                }
+            }
+        }
+    }
+}

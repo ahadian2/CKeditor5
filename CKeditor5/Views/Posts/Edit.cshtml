@@ -1,0 +1,61 @@
+﻿@model CKeditor5.Models.Post
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+@*header*@
+<div class="row MvcView-header">
+    <div class="col d-none d-sm-block">
+        <h2 class="MvcView-Title px-2">ویرایش ...</h2>
+    </div>
+    <div class="col-auto text-end">
+        @Html.ActionLink("بازگشت به لیست", "Index", null, new { @class = "btn-back" })
+    </div>
+</div>
+@*main*@
+    <div class="row g-3 MvcView-Form">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.PostID)
+
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.PostTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.PostTitle, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PostTitle, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.PostContent, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.PostContent, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PostContent, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+    </div>
+        <div class="text-center mt-3">
+                <input type="submit" value="بروزرسانی اطلاعات" class="btn-save" />
+        </div>
+}
+@section Style{
+    @*My Css Code*@
+}
+@section Script{
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        @*for hover Right navbar slider *@
+        $(document).ready(function () {
+        $('#dashboard').addClass('active');
+        });
+    </script>
+}
+
+
+
